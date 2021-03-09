@@ -53,6 +53,7 @@ public class OrderController {
 	}
 	
 	
+	
 	//get orderlist by buyerid
 	@GetMapping(value="/orders/{buyerId}", produces= MediaType.APPLICATION_JSON_VALUE)
     public List<OrdersDTO> getOrders(@PathVariable Integer buyerId) {
@@ -63,7 +64,7 @@ public class OrderController {
         return orderService.getBuyerOrders(buyerId);
     }
 	
-	//reorder
+	//reorder the order
 	
 	@PostMapping(value="/orders/reOrder", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void reOrder(@RequestBody OrdersDTO orderDTO) {
